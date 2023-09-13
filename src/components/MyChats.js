@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { ChatState } from "../context/ChatProvider";
 import { Box, Button, Stack, useToast } from "@chakra-ui/react";
 import { fetchChats } from "../services/api_calling";
@@ -16,6 +16,7 @@ const MyChats = ({ fetchAgain }) => {
   const getChats = async () => {
     // loading(true);
     const res = await fetchChats();
+
     if (res.success) {
       setChats(res.data);
     } else {

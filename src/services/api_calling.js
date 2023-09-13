@@ -1,15 +1,14 @@
 import axios from "axios";
 const baseUrl = process.env.REACT_APP_baseUrl;
 
-const userInfo = localStorage.getItem("userInfo");
-const authToken = JSON.parse(userInfo)?.token;
-
-const headers = {
-  Authorization: "Bearer " + authToken, //the token is a variable which holds the token
-};
-
 const postRequest = async (path, data) => {
-  console.log("this is path", baseUrl, path);
+  const userInfo = localStorage.getItem("userInfo");
+  const authToken = JSON.parse(userInfo)?.token;
+
+  const headers = {
+    Authorization: "Bearer " + authToken, //the token is a variable which holds the token
+  };
+
   let res = {
     success: false,
     message: "Something went wrong, please try again later",
@@ -51,6 +50,13 @@ const postRequest = async (path, data) => {
 // };
 
 const putRequest = async (path, data) => {
+  const userInfo = localStorage.getItem("userInfo");
+  const authToken = JSON.parse(userInfo)?.token;
+
+  const headers = {
+    Authorization: "Bearer " + authToken, //the token is a variable which holds the token
+  };
+
   let res = {
     success: false,
     message: "Something went wrong, please try again later",
@@ -72,6 +78,13 @@ const putRequest = async (path, data) => {
 };
 
 const getRequest = async (path) => {
+  const userInfo = localStorage.getItem("userInfo");
+  const authToken = JSON.parse(userInfo)?.token;
+
+  const headers = {
+    Authorization: "Bearer " + authToken, //the token is a variable which holds the token
+  };
+
   let res = {
     success: false,
     message: "Something went wrong, please try again later",

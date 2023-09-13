@@ -29,7 +29,7 @@ const GroupChatModal = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [createGroupLoading, setCreateGroupLoading] = useState(false);
   const toast = useToast();
-  const { user, chats, setChats } = ChatState();
+  const { chats, setChats } = ChatState();
 
   const handleSearch = async (query) => {
     setSearch(query);

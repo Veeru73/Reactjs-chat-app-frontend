@@ -3,7 +3,6 @@ import {
   Avatar,
   Button,
   IconButton,
-  Image,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -15,7 +14,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import { ChatState } from "../context/ChatProvider";
+// import { ChatState } from "../context/ChatProvider";
 
 const ProfileModel = ({ user, children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();

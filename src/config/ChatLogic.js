@@ -16,6 +16,35 @@ export const isSameSender = (messages, m, i, userId) => {
   );
 };
 
+export const isSameMessageDate = (messages, m, i) => {
+  const getFullDateString = (date) => {
+    const dateObject = new Date(date);
+    const currentYear = dateObject.getFullYear();
+    const currentMonth = dateObject.getMonth() + 1; // Months are zero-based, so add 1
+    const currentDay = dateObject.getDate();
+    const fullDate = `${currentYear}-${currentMonth}-${currentDay}`;
+    return fullDate;
+  };
+
+  const currentMessageDate = getFullDateString(m.createdAt);
+
+  if (
+    i > 0 &&
+    getFullDateString(messages[i - 1].createdAt) === currentMessageDate
+  ) {
+    return true; // Previous message has the same date
+  }
+
+  if (
+    i < messages.length - 1 &&
+    getFullDateString(messages[i + 1].createdAt) === currentMessageDate
+  ) {
+    return true; // Next message has the same date
+  }
+
+  return false; // No other message with the same date
+};
+
 export const isLastMessage = (messages, i, userId) => {
   return (
     i === messages.length - 1 &&
