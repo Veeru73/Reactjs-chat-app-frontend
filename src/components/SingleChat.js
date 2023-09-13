@@ -32,7 +32,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const [isTyping, setIsTyping] = useState(false);
   const toast = useToast();
 
-  console.log("this is messages------------>", messages);
+  // console.log("this is messages------------>", messages);
 
   const defaultOptions = {
     loop: true,

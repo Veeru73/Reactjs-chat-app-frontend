@@ -56,9 +56,9 @@ const UpdateGroupChatModel = ({
     const data = { chatId: selectedChat._id, userId: user1._id };
     const res = await removeFromGroup(data);
     if (res.success) {
-      user1._id === user._id ? setSelectedChat() : setSelectedChat(data);
+      user1._id === user._id ? setSelectedChat() : setSelectedChat(res.data);
       fetchAllMessages();
-      setSelectedChat(res.data);
+      // setSelectedChat(res.data);
       setFetchAgain(!fetchAgain);
       onClose();
     } else {

@@ -11,7 +11,7 @@ import { ChatState } from "../context/ChatProvider";
 import { Avatar, Box, Tooltip } from "@chakra-ui/react";
 
 const ScrollableChat = ({ messages }) => {
-  console.log("messages==========>", messages);
+  // console.log("messages==========>", messages);
   const formattedTime = (message) => {
     const createdAt = new Date(message.createdAt);
     const formattedTime = createdAt.toLocaleTimeString([], {
